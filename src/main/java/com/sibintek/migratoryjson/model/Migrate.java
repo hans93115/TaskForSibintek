@@ -1,7 +1,6 @@
-package com.sibintek.migratoryjson.entity;
+package com.sibintek.migratoryjson.model;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import com.vladmihalcea.hibernate.type.json.JsonStringType;
 import lombok.Data;
@@ -22,20 +21,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Migrate {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
-    /*@Column
-    private String name;
-
-    @Column
-    private String sex;
-
-    @Column
-    private String city;*/
 
     @Type(type = "jsonb")
     @Column(columnDefinition = "jsonb")
-       private String json_columns;
+       private String json_column;
 
 }
